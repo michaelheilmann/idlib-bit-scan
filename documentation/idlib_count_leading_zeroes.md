@@ -8,7 +8,8 @@ idlib_count_leading_zeroes_<suffix>
     <type> x
   )
 ```
-where `<suffix>` and `<type>` are
+where `<suffix>` and `<type>` can assume the values of any of the rows from the following table
+
 | `<suffix>` | `<type>`   |
 |------------|------------|
 |  `u8`      | `uint8_t`  |

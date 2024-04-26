@@ -25,45 +25,30 @@
 #include "idlib/bit_scan/configure.h"
 #include <inttypes.h>
 
-/// @brief Get the number of leading zeroes of an uint8_t value.
-/// @param x The value.
-/// @return The number of leading zeroes of the uint8_t value.
 size_t
 idlib_count_leading_zeroes_u8
 	(
 		uint8_t x
 	);
 
-/// @brief Get the number of leading zeroes of an uint16_t value.
-/// @param x The value.
-/// @return The number of leading zeroes of the uint16_t value.
 size_t
 idlib_count_leading_zeroes_u16
 	(
 		uint16_t x
 	);
 
-/// @brief Get the number of leading zeroes of an uint32_t value.
-/// @param x The value.
-/// @return The number of leading zeroes of the uint32_t value.
 size_t
 idlib_count_leading_zeroes_u32
 	(
 		uint32_t x
 	);
 
-/// @brief Get the number of leading zeroes of an uint64_t value.
-/// @param x The value.
-/// @return The number of leading zeroes of the uint64_t value.
 size_t
 idlib_count_leading_zeroes_u64
 	(
 		uint64_t x
 	);
 
-/// @brief Get the number of leading zeroes of an size_t value.
-/// @param x The value.
-/// @return The number of leading zeroes of the size_t value.
 size_t
 idlib_count_leading_zeroes_sz
 	(
