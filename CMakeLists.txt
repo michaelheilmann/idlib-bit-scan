@@ -23,9 +23,22 @@ cmake_minimum_required(VERSION 3.20)
 
 project(idlib-bit-scan LANGUAGES C)
 
-set(idlib-bit-scan.idlib-process-directory "${CMAKE_CURRENT_SOURCE_DIR}/external/idlib-process-1.1")
+if (NOT TARGET idlib-process)
 
-add_subdirectory(${idlib-bit-scan.idlib-process-directory})
+  set(idlib-bit-scan.idlib-process-source-dir CACHE STRING "Path to the IdLib Process Library")
+  if (NOT idlib-bit-scan.idlib-process-source-dir)
+    set(idlib-bit-scan.idlib-process-source-dir "${CMAKE_CURRENT_SOURCE_DIR}/external/idlib-process-1.1")
+  endif()
+
+  set(idlib-bit-scan.idlib-process-binary-dir CACHE STRING "Path to the IdLib Process Library")
+  if (NOT idlib-bit-scan.idlib-process-binary-dir)
+    set(idlib-bit-scan.idlib-process-binary-dir "${CMAKE_CURRENT_BINARY_DIR}/external/idlib-process-1.1")
+  endif()
+
+  add_subdirectory(${idlib-bit-scan.idlib-process-source-dir} ${idlib-bit-scan.idlib-process-binary-dir})
+
+endif()
+
 add_subdirectory(library)
 
 enable_testing()
