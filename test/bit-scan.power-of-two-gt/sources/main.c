@@ -1,6 +1,6 @@
 /*
   IdLib Bit Scan
-  Copyright (C) 2024 Michael Heilmann. All rights reserved.
+  Copyright (C) 2023-2024 Michael Heilmann. All rights reserved.
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -19,11 +19,42 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
-#if !defined(IDLIB_BIT_SCAN_H_INCLUDED)
-#define IDLIB_BIT_SCAN_H_INCLUDED
+#include "idlib/bit_scan.h"
 
-#include "idlib/process.h"
-#include "idlib/bit_scan/count_leading_zeroes.h"
-#include "idlib/bit_scan/power_of_two_gt.h"
+#include <stdlib.h>
 
-#endif // IDLIB_BIT_SCAN_H_INCLUDED
+static int
+test1
+  (
+  )
+{
+  int returnValue;
+  uint8_t result;
+  returnValue = idlib_power_of_two_gt_u8(&result, 0);
+  if (returnValue || result != 1) {
+    return IDLIB_ENVIRONMENT_FAILED;
+  }
+  returnValue = idlib_power_of_two_gt_u8(&result, 1);
+  if (returnValue || result != 2) {
+    return IDLIB_ENVIRONMENT_FAILED;
+  }
+  returnValue = idlib_power_of_two_gt_u8(&result, 127);
+  if (returnValue || result != 128) {
+    return IDLIB_ENVIRONMENT_FAILED;
+  }
+  return IDLIB_SUCCESS;
+}
+
+int
+main
+  (
+    int argc,
+    char** argv
+  )
+{
+  if (test1()) {
+    return EXIT_FAILURE;
+  }
+  return EXIT_SUCCESS;
+}
+

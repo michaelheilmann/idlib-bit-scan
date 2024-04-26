@@ -43,3 +43,4 @@ add_subdirectory(library)
 
 enable_testing()
 add_subdirectory(test/bit-scan.count-leading-zeroes)
+add_subdirectory(test/bit-scan.power-of-two-gt)
