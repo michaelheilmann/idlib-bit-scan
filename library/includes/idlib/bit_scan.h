@@ -24,6 +24,7 @@
 
 #include "idlib/process.h"
 #include "idlib/bit_scan/count_leading_zeroes.h"
+#include "idlib/bit_scan/power_of_two_ge.h"
 #include "idlib/bit_scan/power_of_two_gt.h"
 
 #endif // IDLIB_BIT_SCAN_H_INCLUDED
