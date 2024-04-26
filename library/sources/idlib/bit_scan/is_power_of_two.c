@@ -19,13 +19,44 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
-#if !defined(IDLIB_BIT_SCAN_H_INCLUDED)
-#define IDLIB_BIT_SCAN_H_INCLUDED
-
-#include "idlib/process.h"
-#include "idlib/bit_scan/count_leading_zeroes.h"
 #include "idlib/bit_scan/is_power_of_two.h"
-#include "idlib/bit_scan/power_of_two_ge.h"
-#include "idlib/bit_scan/power_of_two_gt.h"
 
-#endif // IDLIB_BIT_SCAN_H_INCLUDED
+bool
+idlib_is_power_of_two_u8
+  (
+    uint8_t x
+  )
+{
+  if (!x) return false;
+  else return 0 == (x & (x - 1));
+}
+
+bool
+idlib_is_power_of_two_u16
+  (
+    uint16_t x
+  )
+{
+  if (!x) return false;
+  else return 0 == (x & (x - 1));
+}
+
+bool
+idlib_is_power_of_two_u32
+  (
+    uint32_t x
+  )
+{
+  if (!x) return false;
+  else return 0 == (x & (x - 1));
+}
+
+bool
+idlib_is_power_of_two_u64
+  (
+    uint64_t x
+  )
+{
+  if (!x) return false;
+  else return 0 == (x & (x - 1));
+}

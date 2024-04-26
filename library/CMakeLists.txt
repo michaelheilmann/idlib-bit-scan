@@ -74,6 +74,9 @@ list(APPEND ${name}.source_files "${CMAKE_CURRENT_SOURCE_DIR}/sources/idlib/bit_
 list(APPEND ${name}.header_files "${CMAKE_CURRENT_SOURCE_DIR}/includes/idlib/bit_scan/power_of_two_ge.h")
 list(APPEND ${name}.source_files "${CMAKE_CURRENT_SOURCE_DIR}/sources/idlib/bit_scan/power_of_two_ge.c")
 
+list(APPEND ${name}.header_files "${CMAKE_CURRENT_SOURCE_DIR}/includes/idlib/bit_scan/is_power_of_two.h")
+list(APPEND ${name}.source_files "${CMAKE_CURRENT_SOURCE_DIR}/sources/idlib/bit_scan/is_power_of_two.c")
+
 end_library()
 
 target_link_libraries(${name} idlib-process)
