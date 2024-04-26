@@ -30,7 +30,7 @@ idlib_count_leading_zeroes_u8
 	for (size_t i = 8; i > 0; --i) {
 		uint8_t mask = 1 << (i - 1);
 		if (x & mask) {
-			return i;
+			return 8 - i;
 		}
 	}
 	return 8;
@@ -45,7 +45,7 @@ idlib_count_leading_zeroes_u16
 	for (size_t i = 16; i > 0; --i) {
 		uint16_t mask = 1 << (i - 1);
 		if (x & mask) {
-			return i;
+			return 16 - i;
 		}
 	}
 	return 16;
@@ -60,7 +60,7 @@ idlib_count_leading_zeroes_u32
 	for (size_t i = 32; i > 0; --i) {
 		uint32_t mask = 1 << (i - 1);
 		if (x & mask) {
-			return i;
+			return 32 - i;
 		}
 	}
 	return 32;
