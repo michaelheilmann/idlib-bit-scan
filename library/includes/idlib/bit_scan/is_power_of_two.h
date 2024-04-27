@@ -50,4 +50,10 @@ idlib_is_power_of_two_u64
     uint64_t x
   );
 
+bool
+idlib_is_power_of_two_sz
+  (
+    size_t x
+  );
+
 #endif // IDLIB_BIT_SCAN_IS_POWER_OF_TWO_H_INCLUDED

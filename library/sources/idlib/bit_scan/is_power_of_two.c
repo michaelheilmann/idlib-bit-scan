@@ -60,3 +60,19 @@ idlib_is_power_of_two_u64
   if (!x) return false;
   else return 0 == (x & (x - 1));
 }
+
+
+bool
+idlib_is_power_of_two_sz
+  (
+    size_t x
+  )
+{
+#if IDLIB_INSTRUCTION_SET_ARCHITECTURE_X64 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_is_power_of_two_u64(x);
+#elif IDLIB_INSTRUCTION_SET_ARCHITECTURE_X86 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_is_power_of_two_u32(x);
+#else
+  #error("instruction set architecture not (yet) supported")
+#endif
+}
