@@ -35,8 +35,8 @@ idlib_power_of_two_gt_u8
 int
 idlib_power_of_two_gt_u16
   (
-    uint8_t* RETURN,
-    uint8_t x
+    uint16_t* RETURN,
+    uint16_t x
   );
 
 int
