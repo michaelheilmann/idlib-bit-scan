@@ -82,3 +82,19 @@ idlib_power_of_two_ge_u64
     return idlib_power_of_two_gt_u64(RETURN, x);
   }
 }
+
+int
+idlib_power_of_two_ge_sz
+  (
+    size_t* RETURN,
+    size_t x
+  )
+{
+#if IDLIB_INSTRUCTION_SET_ARCHITECTURE_X64 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_power_of_two_ge_u64(RETURN, x);
+#elif IDLIB_INSTRUCTION_SET_ARCHITECTURE_X86 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_power_of_two_ge_u32(RETURN, x);
+#else
+  #error("instruction set architecture not (yet) supported")
+#endif 
+}

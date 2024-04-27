@@ -83,3 +83,19 @@ idlib_power_of_two_gt_u64
   *RETURN = UINT64_C(1) << (64 - k);
   return IDLIB_SUCCESS;
 }
+
+int
+idlib_power_of_two_gt_sz
+  (
+    size_t* RETURN,
+    size_t x
+  )
+{
+#if IDLIB_INSTRUCTION_SET_ARCHITECTURE_X64 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_power_of_two_gt_u64(RETURN, x);
+#elif IDLIB_INSTRUCTION_SET_ARCHITECTURE_X86 == IDLIB_INSTRUCTION_SET_ARCHITECTURE
+  return idlib_power_of_two_gt_u32(RETURN, x);
+#else
+  #error("instruction set architecture not (yet) supported")
+#endif 
+}

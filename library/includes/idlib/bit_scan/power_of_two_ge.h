@@ -53,4 +53,11 @@ idlib_power_of_two_ge_u64
     uint64_t x
   );
 
+int
+idlib_power_of_two_ge_sz
+  (
+    size_t* RETURN,
+    size_t x
+  );
+
 #endif // IDLIB_BIT_SCAN_POWER_OF_TWO_GE_H_INCLUDED
