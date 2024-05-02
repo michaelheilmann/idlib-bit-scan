@@ -39,7 +39,7 @@ endif()
 
 set(idlib-bit-scan.tag CACHE STRING "IdLib Bit Scan: The Git tag to check out")
 if (NOT idlib-bit-scan.tag)
-  set(idlib-file-system.tag 1.4)
+  set(idlib-bit-scan.tag 1.4)
 endif()
 
 set(idlib-bit-scan.source-dir CACHE STRING "IdLib Bit Scan: Path to the source directory")
@@ -68,9 +68,9 @@ FetchContent_MakeAvailable(idlib-bit-scan)
 ```
 And you can use *IdLib Bit Scan* by linking the library target `idlib-bit-scan` to a target `<target>`
 ```
-target_link_libraries(my-target idlib-file-system)
+target_link_libraries(<target> idlib-bit-scan)
 ```
-and by adding the include-directive  
+and by adding the include directive  
 ```
 #include "idlib/bit_scan.h"
 ```
