@@ -1,5 +1,6 @@
 # IdLib Bit Scan
-*IdLib Bit Scan* provides cross-platform (Windows and Linux) file system functionality for embedding into C programs.
+*IdLib Bit Scan* provides functionality related to Bit scans.
+The library id designed as a *backing* library to be integrated into other C programs.
 *IdLib Bit Scan* is licensed under the [zlib License](LICENSE).
 
 ## Integrating into CMake projects
